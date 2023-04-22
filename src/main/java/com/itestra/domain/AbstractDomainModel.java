@@ -10,4 +10,8 @@ public class AbstractDomainModel extends PanacheMongoEntity {
     public AbstractDomainModel() {
         this.uuid = UUID.randomUUID().toString();
     }
+
+    public AbstractDomainModel(String uuid) {
+        this.uuid = uuid;
+    }
 }
