@@ -4,13 +4,9 @@ import io.quarkus.mongodb.panache.PanacheMongoEntity;
 
 import java.util.UUID;
 
-public abstract class AbstractDomainModel extends PanacheMongoEntity {
-    private String uuid;
+public class AbstractDomainModel extends PanacheMongoEntity {
 
-    public AbstractDomainModel() {
-        this.uuid = UUID.randomUUID().toString();
-    }
-    public AbstractDomainModel(String uuid) {
-        this.uuid = uuid;
+    public AbstractDomainModel(){
+        // nothing to do
     }
 }

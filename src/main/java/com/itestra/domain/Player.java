@@ -1,11 +1,11 @@
 package com.itestra.domain;
 
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
+import io.quarkus.mongodb.panache.common.MongoEntity;
 
 import java.util.UUID;
-
+@MongoEntity(collection="Person")
 public class Player extends AbstractDomainModel {
-
 
     private String name;
     private long points;
