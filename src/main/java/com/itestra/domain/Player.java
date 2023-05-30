@@ -1,16 +1,14 @@
 package com.itestra.domain;
 
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
-import java.util.UUID;
-@MongoEntity(collection="Person")
+@MongoEntity(collection = "Person")
 public class Player extends AbstractDomainModel {
 
     private String name;
-    private long points;
+    private int points;
 
-    public Player(String name, long points) {
+    public Player(String name, int points) {
         super();
         this.name = name;
         this.points = points;
@@ -32,7 +30,7 @@ public class Player extends AbstractDomainModel {
         return points;
     }
 
-    public void setPoints(long points) {
+    public void setPoints(int points) {
         this.points = points;
     }
 }
