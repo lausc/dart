@@ -2,7 +2,7 @@ package com.itestra.domain;
 
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
-@MongoEntity(collection = "Person")
+@MongoEntity(collection = "Player")
 public class Player extends AbstractDomainModel {
 
     private String name;
@@ -26,7 +26,7 @@ public class Player extends AbstractDomainModel {
         this.name = name;
     }
 
-    public long getPoints() {
+    public int getPoints() {
         return points;
     }
 

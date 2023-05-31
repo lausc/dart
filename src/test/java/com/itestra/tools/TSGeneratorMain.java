@@ -1,7 +1,7 @@
 package com.itestra.tools;
 
 import com.google.common.collect.Lists;
-import com.itestra.resource.PlayerController;
+import com.itestra.controller.PlayerController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
