@@ -21,13 +21,23 @@ public class GameService extends AbstractService<Game> {
         log.info("Game wird gespeichert");
         if (game.id == null) {
             game.setDateTime(LocalDateTime.now());
+        } else {
+            throw new RuntimeException("Game schon vorhanden");
         }
 
-        for (String id: game.getPlayerIds()) {
+        int gamePoints = 3;
+        for (String id : game.getPlayerIds()) {
             Player player = playerService.getById(id);
-            if(player==null) {
-                throw new RuntimeException("Player <" +id +"> nicht gefunden");
+            if (player == null) {
+                throw new RuntimeException("Player <" + id + "> nicht gefunden");
             }
+            int points = player.getPoints();
+            points = points + gamePoints;
+            player.setPoints(points);
+            if (gamePoints > 0) {
+                gamePoints = gamePoints - 1;
+            }
+            playerService.storePlayer(player);
         }
         game.persistOrUpdate();
     }
