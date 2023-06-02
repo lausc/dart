@@ -1,5 +1,17 @@
 # dart
 
+## Todo
+
+- Game solle eine Liste von Spielernamen und nicht tids enthalten, es gibt eine Methode PlayerService.getByName den
+  Spieler über den Namen zu laden
+- Beim Speichern des Spielers muss der Name unique/eindeutig sein. Das heißt man darf nicht einen Spieler zweimal mit
+  dem gleichen Namen anlegen z.B lauri lauri (Exception)
+- In einem Spiel darf nicht mehrmals der gleiche Spieler vorkommen z.B. Spiel 1 (ingo, ingo ingo) würde bedeuten, dass
+  ingo 3+2+1 Punkt für ein Spiel bekommt(Excpetion)
+- Ein Spiel mit nur einem Spieler darf es nicht geben (Exception)
+
+## Project
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
@@ -56,7 +68,8 @@ If you want to learn more about building native executables, please consult http
 ## Related Guides
 
 - MongoDB client ([guide](https://quarkus.io/guides/mongodb)): Connect to MongoDB in either imperative or reactive style
-- MongoDB with Panache ([guide](https://quarkus.io/guides/mongodb-panache)): Simplify your persistence code for MongoDB via the active record or the repository pattern
+- MongoDB with Panache ([guide](https://quarkus.io/guides/mongodb-panache)): Simplify your persistence code for MongoDB
+  via the active record or the repository pattern
 - RESTEasy Classic ([guide](https://quarkus.io/guides/resteasy)): REST endpoint framework implementing JAX-RS and more
 
 ## Provided Code
