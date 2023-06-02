@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,7 +22,7 @@ public class PlayerController {
     @Path("/players")
     public List<Player> getPlayers() {
         log.info("Spielerliste wird ausgegeben");
-        List<Player> allPlayers =  playerService.getAllPlayer();
+        List<Player> allPlayers = playerService.getAllPlayer();
         return allPlayers;
     }
 
@@ -39,9 +38,18 @@ public class PlayerController {
     @GET
     @Path("/players/tid/{tid}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Player getPlayer(@PathParam(value = "tid") String tid) {
+    public Player getPlayerByTid(@PathParam(value = "tid") String tid) {
         log.info("Lade Spieler mit Id");
         Player player = playerService.getById(tid);
+        return player;
+    }
+
+    @GET
+    @Path("/players/name/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Player getPlayer(@PathParam(value = "name") String name) {
+        log.info("Lade Spieler mit name");
+        Player player = playerService.getByName(name);
         return player;
     }
 }

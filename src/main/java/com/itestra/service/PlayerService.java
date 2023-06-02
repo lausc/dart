@@ -11,6 +11,7 @@ import java.util.List;
 @ApplicationScoped
 public class PlayerService extends AbstractService<Player> {
     private static final Logger log = LogManager.getLogger();
+
     public void storePlayer(Player player) {
         log.info("Spieler wird gespeichert");
         player.persistOrUpdate();
@@ -26,5 +27,10 @@ public class PlayerService extends AbstractService<Player> {
     public Player getById(String tid) {
         log.info("Lade Spieler mit Id");
         return Player.findById(new ObjectId((tid)));
+    }
+
+    public Player getByName(String name) {
+        log.info("Lade Spieler mit name");
+        return Player.find("name", name).firstResult();
     }
 }
