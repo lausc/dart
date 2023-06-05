@@ -10,7 +10,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-
 @Path("/dart")
 public class PlayerController {
     private static final Logger log = LogManager.getLogger();

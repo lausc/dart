@@ -1,9 +1,7 @@
 package com.itestra.controller;
 
 import com.itestra.domain.Game;
-import com.itestra.domain.GameTypeEnum;
 import com.itestra.service.GameService;
-import com.itestra.service.PlayerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,15 +33,30 @@ public class GameController {
     public void storeGame(Game game) {
         log.info("Game wird gespeichert");
         gameService.storeGame(game);
-
     }
 
     @GET
-    @Path("/players/tid/{tid}")
+    @Path("/games/tid/{tid}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Game getPlayer(@PathParam(value = "tid") String tid) {
+    public Game getGame(@PathParam(value = "tid") String tid) {
         log.info("Lade Spiel mit Id");
-       Game game = gameService.getById(tid);
+        Game game = gameService.getById(tid);
         return game;
+    }
+
+    @DELETE
+    @Path("/games/tid/{tid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void deleteGame(@PathParam(value = "tid") String tid) {
+        log.info("Lösche Spiel mit Id");
+        // TODO Lauri
+    }
+
+    @POST
+    @Path("/games/recalculateScore")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void recalculateScore() {
+        log.info("Punktestand neuberechnen");
+        // TODO Lauri
     }
 }
