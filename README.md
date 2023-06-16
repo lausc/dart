@@ -2,13 +2,8 @@
 
 ## Todo
 
-- Game solle eine Liste von Spielernamen und nicht tids enthalten, es gibt eine Methode PlayerService.getByName den
-  Spieler über den Namen zu laden
-- Beim Speichern des Spielers muss der Name unique/eindeutig sein. Das heißt man darf nicht einen Spieler zweimal mit
-  dem gleichen Namen anlegen z.B lauri lauri (Exception)
 - In einem Spiel darf nicht mehrmals der gleiche Spieler vorkommen z.B. Spiel 1 (ingo, ingo ingo) würde bedeuten, dass
   ingo 3+2+1 Punkt für ein Spiel bekommt(Excpetion)
-- Ein Spiel mit nur einem Spieler darf es nicht geben (Exception)
 
 ## Project
 

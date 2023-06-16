@@ -2,25 +2,25 @@ package com.itestra.domain;
 
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-@MongoEntity(collection="Game")
+
+@MongoEntity(collection = "Game")
 public class Game extends AbstractDomainModel {
 
 
     private GameTypeEnum gameType;
     private LocalDateTime dateTime;
-    private List<String> playerIds;
+    private List<String> playerNames;
 
     public Game() {
         super(); // Wird von JSON benötigt
     }
 
-    public Game(GameTypeEnum gameType, List<String> playerIds) {
+    public Game(GameTypeEnum gameType, List<String> playerNames) {
         super();
-        this.gameType=gameType;
-        this.playerIds=playerIds;
+        this.gameType = gameType;
+        this.playerNames = playerNames;
     }
 
     public GameTypeEnum getGameType() {
@@ -39,11 +39,11 @@ public class Game extends AbstractDomainModel {
         this.dateTime = dateTime;
     }
 
-    public List<String> getPlayerIds() {
-        return playerIds;
+    public List<String> getPlayerNames() {
+        return playerNames;
     }
 
-    public void setPlayerIds(List<String> playerIds) {
-        this.playerIds = playerIds;
+    public void setPlayerNames(List<String> playerNames) {
+        this.playerNames = playerNames;
     }
 }

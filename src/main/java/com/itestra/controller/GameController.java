@@ -46,17 +46,15 @@ public class GameController {
 
     @DELETE
     @Path("/games/tid/{tid}")
-    @Produces(MediaType.APPLICATION_JSON)
     public void deleteGame(@PathParam(value = "tid") String tid) {
         log.info("Lösche Spiel mit Id");
-        // TODO Lauri
+        gameService.delete(tid);
     }
 
     @POST
-    @Path("/games/recalculateScore")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/games/recalculatescore")
     public void recalculateScore() {
         log.info("Punktestand neuberechnen");
-        // TODO Lauri
+        gameService.recalculateScore();
     }
 }
